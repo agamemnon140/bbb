@@ -154,9 +154,9 @@ function Timer({ onDone }) {
 }
 
 function SetRow({ s, i, active, result, onLog }) {
-  const [reps, setReps] = useState("");
+  const [reps, setReps] = useState(String(s.reps).replace("+", ""));
   const ref = useRef(null);
-  useEffect(() => { if (active && ref.current) setTimeout(() => ref.current.focus(), 50); }, [active]);
+  useEffect(() => { if (active && ref.current) setTimeout(() => { ref.current.focus(); ref.current.select(); }, 50); }, [active]);
   const tag = s.kind === "main" ? "Série " + (i + 1) : "BBB " + (i - 2);
   return (
     <div style={{ background: "var(--s1)", border: "1px solid " + (active ? "var(--ac)" : "transparent"),
