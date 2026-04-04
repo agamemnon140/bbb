@@ -1,4 +1,4 @@
-const CACHE = 'bbb531-v4';
+const CACHE = 'bbb531-v5';
 const URLS = ['./', './index.html'];
 
 self.addEventListener('install', function(e) {
